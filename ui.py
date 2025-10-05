@@ -12,7 +12,7 @@ st.write("Ask Question Related TO Cholera, Cancer, Malaria, Covid-19, Rabies")
 user_input = st.text_input("Enter your question:")
 
 with st.spinner("Generating Answer..."):
-    question_embedding = create_embeddings(user_input)[0]
+    question_embedding = create_embeddings([user_input])[0]
 
     new_df = search_engine.find_top_matches(question_embedding)
 
